@@ -32,7 +32,9 @@ EPOCHS = 200
 INIT_LR = 1e-4
 BS = 150
 IMAGE_DIMS = (400, 400, 3)
+#3/4 of training data, 244647 images
 train_image_folder = '/mnt/datasets/carconv/dataset/train'
+#1/4 of test data for validation, 81559 images
 test_image_folder = '/mnt/datasets/carconv/dataset/test'
 
 # construct the image generator for data augmentation
@@ -65,7 +67,7 @@ model_vgg16_conv.summary()
 #for layer in model_vgg16_conv.layers:
 #    layer.trainable = False
 
-#Create your own input format (here 3x200x200)
+#Create your own input format (here 3x400x400)
 input = Input(shape=IMAGE_DIMS,name = 'image_input')
 
 #Use the generated model
